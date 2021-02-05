@@ -1,11 +1,16 @@
-resource "azurerm_resource_group" "testRG" {
-  name     = "testRG"
-  location = "West Europe"
+provider "azurerm" {
+    version = "~>2.0"
+  features {}
 }
 
-resource "azurerm_template_deployment" "testTFPipeline" {
-  name                = "testARMdeployment"
-  resource_group_name = "${azurerm_resource_group.testRG.name}"
+resource "azurerm_data_factory" "adf-demo" {
+  name                = "adf-terraform-demo"
+  location            = "East US 2"
+  resource_group_name = "DEMO-ADF-RG"
+  identity {
+    type = "SystemAssigned"
+  }
+}
 
   template_body = <<DEPLOY
 {
