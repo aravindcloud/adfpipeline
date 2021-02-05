@@ -11,17 +11,8 @@ variable "location" {
   description = "The region where the virtual network is created."
   default     = "centralus"
 }
-variable "virtual_network_name" {
-  description = "The name for your virtual network."
-  default     = "hn-vnet"
+variable "StorageName" {
+  description = "BlobStorage Name."
+  default     = "hndemoaccount"
 }
 
-variable "address_space" {
-  description = "The address space that is used by the virtual network. You can supply more than one address space. Changing this forces a new resource to be created."
-  default     = "20.0.0.0/16"
-}
-
-variable "subnet_prefix" {
-  description = "The address prefix to use for the subnet."
-  default     = "20.0.1.0/24"
-}
