@@ -7,6 +7,12 @@ variable "resource_group" {
   description = "The name of your Azure Resource Group."
   default     = "health-now-rg"
 }
+
+variable "adfname" {
+  description = "The name of your Azure Resource Group."
+  default     = "hndemooadf"
+}
+
 variable "location" {
   description = "The region where the virtual network is created."
   default     = "centralus"
