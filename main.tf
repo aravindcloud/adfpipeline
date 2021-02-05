@@ -4,9 +4,9 @@ provider "azurerm" {
 }
 
 resource "azurerm_data_factory" "adf-demo" {
-  name                = "adf-terraform-demo"
-  location            = "East US 2"
-  resource_group_name = "DEMO-ADF-RG"
+  name                = var.adfname
+  location            = var.location
+  resource_group_name = var.resource_group
   identity {
     type = "SystemAssigned"
   }
